@@ -1,0 +1,10 @@
+query ExampleQuery {
+  movies {
+    title
+    director
+  }
+  favoriteMovie {
+    title
+    director
+  }
+}

@@ -1,0 +1,17 @@
+query($myRegexInput:String) {
+  country(code: "NL"){
+    ...stuff
+  }
+  countries(filter:{ name:{ regex: $myRegexInput}}) {
+    ...stuff
+    continent {
+      name
+      
+    }
+  }
+}
+fragment stuff on Country {
+  name
+  capital
+  currency
+}
