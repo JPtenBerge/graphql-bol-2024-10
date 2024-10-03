@@ -1,27 +1,29 @@
+import { directors } from './directors.js';
+
 export const movies = [
 	{
 		title: 'The Matrix',
-		director: 'The Wachowskis',
+		directorId: directors[0].id,
 		releaseYear: 1999,
 	},
-    {
-        title: 'The Matrix Reloaded',
-        director: 'The Wachowskis',
-        releaseYear: 2003,
-    },
-    {
-        title: 'The Matrix Revolutions',
-        director: 'The Wachowskis',
-        releaseYear: 2003,
-    },
-    {
-        title: 'The Matrix Resurrections',
-        director: 'Lana Wachowski',
-        releaseYear: 2021,
-    },
-    {
-        title: 'The Animatrix',
-        director: 'Various',
-        releaseYear: 2003,
-    }
+	{
+		title: 'The Matrix Reloaded',
+		directorId: directors[0].id,
+		releaseYear: 2003,
+	},
+	{
+		title: 'The Matrix Revolutions',
+		directorId: directors[0].id,
+		releaseYear: 2003,
+	},
+	{
+		title: 'The Matrix Resurrections',
+		directorId: directors[1].id,
+		releaseYear: 2021,
+	},
+	{
+		title: 'The Animatrix',
+		directorId: directors[0].id,
+		releaseYear: 2003,
+	},
 ];

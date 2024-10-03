@@ -7,8 +7,13 @@ type Query {
 
 type Movie {
     title: String!
-    director: String!
+    director: Director
     releaseYear: Int!
+}
+
+type Director {
+    name: String!
+    birthYear: Int!
 }
 
 type Book {
