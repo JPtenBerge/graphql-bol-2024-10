@@ -10,9 +10,19 @@ export const resolvers = {
 		books: () => books,
 		favoriteMovie: () => movieRepo.getFavoriteMovie(),
         movies: () => movieRepo.getMovies(),
+		getMovieById: (parent, args, context) => {
+			return movieRepo.getById(args.id);
+		},
+		filterMovie: (parent, args, context) => {
+			console.log('args:', args);
+			return movieRepo.filterMovies(args.input);
+		}
 	},
 	Movie: {
 		director: (parent, args, context) => {
+			if(parent.directorId === 15) {
+				throw new Error('no way');
+			}
 			return directorRepo.getById(parent.directorId);
 		}
 	}
