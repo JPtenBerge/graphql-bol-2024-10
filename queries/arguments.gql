@@ -1,0 +1,19 @@
+query ExampleQuery($filterMovieInput: FilterMovieInput!) {
+  getMovieById(id: 4) {
+    title
+    releaseYear
+  }
+  filterMovie(input: $filterMovieInput) {
+    title
+    releaseYear
+  }
+}
+
+with variables:
+
+{
+  "filterMovieInput": {
+    title: "re"
+    releaseYear: 2003
+  }
+}
