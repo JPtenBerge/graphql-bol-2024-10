@@ -22,4 +22,13 @@ export const resolvers = {
 			return context.directorRepo.getById(parent.directorId);
 		},
 	},
+	Genre: {
+		ACTION: 'ac',
+		COMEDY: 'co',
+		DRAMA: 'dr',
+		HORROR: 'ho',
+		ROMANCE: 'ro',
+		THRILLER: 'th',
+		WESTERN: 'we',
+	}
 };
