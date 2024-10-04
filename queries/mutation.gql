@@ -1,0 +1,19 @@
+mutation($input: AddMovieInput!) {
+  addMovie(input: $input) {
+    title
+    director {
+      name
+    }
+    releaseYear
+  }
+}
+
+met var:
+
+{
+  "input": {
+    "title": "John Wick",
+    "releaseYear": 2019,
+    "directorName": "the wachowskis"
+  }
+}
