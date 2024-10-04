@@ -7,6 +7,17 @@ type Query {
   filterMovie(input: FilterMovieInput!): [Movie!]!
 }
 
+type Mutation {
+  addMovie(input: AddMovieInput!): Movie!
+  deleteMovie(id: Int!): Movie!
+}
+
+input AddMovieInput {
+  title: String!
+  releaseYear: Int!
+  directorName: String!
+}
+
 input FilterMovieInput {
   title: String
   releaseYear: Int

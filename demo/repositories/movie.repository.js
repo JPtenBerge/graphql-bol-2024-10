@@ -1,3 +1,4 @@
+import { directors } from '../data/directors.js';
 import { movies } from '../data/movies.js';
 
 export class MovieRepository {
@@ -30,5 +31,16 @@ export class MovieRepository {
 		}
 		console.log('result:', result);
 		return result;
+	}
+
+	addMovie(movie) {
+		let movieEntity = {
+			id: Math.max(...movies.map(x => x.id)) + 1,
+			releaseYear: movie.releaseYear,
+			title: movie.title,
+			directorId: directors.find(x => x.name.toLowerCase() === movie.directorName.toLowerCase()).id,
+		};
+		movies.push(movieEntity);
+		return movieEntity;
 	}
 }
