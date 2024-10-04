@@ -2,6 +2,7 @@ export const typeDefs = `
 type Query {
   books: [Book]
   favoriteMovie: Movie!
+  watchables: [Watchable!]!
   movies: [Movie!]!
   getMovieById(id: Int!): Movie
   filterMovie(input: FilterMovieInput!): [Movie!]!
@@ -25,11 +26,24 @@ input FilterMovieInput {
   directorName: String
 }
 
-type Movie {
+interface Watchable {
     title: String!
-    director: Director
     releaseYear: Int!
     genre: Genre!
+}
+
+type Movie implements Watchable {
+    title: String!
+    releaseYear: Int!
+    genre: Genre!
+    director: Director
+}
+type Show implements Watchable {
+    title: String!
+    releaseYear: Int!
+    genre: Genre!
+    nrOfSeasons: Int!
+    whereToWatch: String!
 }
 
 enum Genre {
