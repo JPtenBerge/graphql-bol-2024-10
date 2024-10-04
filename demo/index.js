@@ -15,6 +15,11 @@ const server = new ApolloServer({
 const { url } = await startStandaloneServer(server, {
 	listen: { port: 4600 },
 	context: async () => {
+
+		// JWT  BASIC  Cookies
+		// [Authorize]
+		// @preauthorize
+
 		let movieRepo = new MovieRepository();
 		let showRepo = new ShowRepository();
 		let directorRepo = new DirectorRepository();
